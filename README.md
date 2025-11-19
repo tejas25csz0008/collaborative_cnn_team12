@@ -58,7 +58,7 @@ Trained on a different dataset
 Slightly different training dynamics
 Fine-tuning strategy varies
 
-**4. Experimental Results**
+#4. Experimental Results
 
 4.1 Self-Evaluation Metrics
 Model V1 on dataset_1
@@ -81,7 +81,7 @@ F1-Score	  0.9810
 → Indicates improved generalization stability
 
 
-**5. Observations & Analysis**
+#5. Observations & Analysis
 
 1. Dataset Influence
 Model V2 appears to have been trained on a dataset with more varied samples or stronger augmentations.
@@ -106,7 +106,7 @@ It learned more robust features
 Or its dataset had better variation
 Or training hyperparameters were more optimal
 
-**6. Conclusion**
+#6. Conclusion
 This collaborative project demonstrates how:
 
 Two similar architectures can behave differently on unseen data
