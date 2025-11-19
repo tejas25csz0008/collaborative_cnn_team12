@@ -8,14 +8,12 @@ import json
 
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 
-# Paths
 TEST_DIR = "/home/tejas/collaborative_cnn_team/collaborative_cnn_team12_/test_data"
 MODEL_PATH = "/home/tejas/collaborative_cnn_team/collaborative_cnn_team12_/models/model_v1.pth"
 RESULTS_DIR = "/home/tejas/collaborative_cnn_team/collaborative_cnn_team12_/results"
 PREDICTIONS_FILE = os.path.join(RESULTS_DIR, "predictions.json")
 METRICS_FILE = os.path.join(RESULTS_DIR, "evaluation_metrics.json")
 
-# Image transform
 transform = transforms.Compose([
     transforms.Resize((224, 224)),
     transforms.ToTensor()
@@ -61,7 +59,6 @@ for class_folder in os.listdir(TEST_DIR):
         all_preds.append(pred)
         predictions[img_path] = "cat" if pred == 0 else "dog"
 
-# Compute evaluation metrics
 metrics = {
     "accuracy": float(accuracy_score(all_labels, all_preds)),
     "precision": float(precision_score(all_labels, all_preds, average='macro')),
@@ -69,7 +66,6 @@ metrics = {
     "f1_score": float(f1_score(all_labels, all_preds, average='macro'))
 }
 
-# Save predictions
 os.makedirs(RESULTS_DIR, exist_ok=True)
 with open(PREDICTIONS_FILE, "w") as f:
     json.dump(predictions, f, indent=4)
