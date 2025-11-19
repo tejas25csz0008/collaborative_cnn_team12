@@ -1,5 +1,5 @@
 # Collaborative CNN Cross-Dataset Evaluation Report  
-## Team 12– Tejas(2025CSZ0008) & Divya(2025aiz0019)
+## Team 12– Tejas(2025CSZ0008) & Divya(2025AIZ0019)
 # 1. Introduction
 
 This project evaluates the **cross-dataset generalization** of two independently trained CNN models.  
