@@ -8,7 +8,7 @@ Each team member trained a model on their **own dataset** and then tested the mo
 The objectives of the project are:
 
 1. To analyze how CNN models trained on different datasets perform when applied to unseen data from another user.  
-2. To compare the generalization capability of **Model V1 ** and **Model V2 **.  
+2. To compare the generalization capability of Model V1  and Model V2 .  
 3. To learn and demonstrate proper GitHub collaboration workflow including:
    - Forking & cloning  
    - Branching  
@@ -128,9 +128,11 @@ More diverse dataset
 Longer/optimized training
 
 3. Cross-Domain Performance
+   
 Model V2 maintains almost identical performance on dataset1 as its self-test score.
 
-4. Conclusion from results
+5. Conclusion from results
+   
 Model V2 has better cross-dataset generalization, suggesting:
 
 It learned more robust features
