@@ -18,8 +18,6 @@ The objectives of the project are:
 
 Both models are implemented using **ResNet-18 (Transfer Learning)** but trained on different datasets, with different augmentations and slightly different fine-tuning approaches.
 
----
-
 # 2. Dataset Overview
 
 ## **Dataset 1**
@@ -36,11 +34,9 @@ Both datasets have the **same number of classes**, but:
 - camera sources  
 - illumination  
 
-…are different, making cross-evaluation meaningful.
 
 # 3. Model Architectures
-
-## **Model V1 **
+**Model V1 **
 A transfer-learning ResNet-18 model:
 self.base = models.resnet18(weights=models.ResNet18_Weights.IMAGENET1K_V1)
 self.base.fc = nn.Linear(in_features, num_classes=2)
