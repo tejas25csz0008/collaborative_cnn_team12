@@ -36,7 +36,7 @@ Both datasets have the **same number of classes**, but:
 
 
 # 3. Model Architectures
-**Model V1 **
+Model V1 
 A transfer-learning ResNet-18 model:
 self.base = models.resnet18(weights=models.ResNet18_Weights.IMAGENET1K_V1)
 self.base.fc = nn.Linear(in_features, num_classes=2)
@@ -48,7 +48,7 @@ Mild augmentations
 Optimizer: Adam
 Loss: CrossEntropyLoss
 
-**Model V2 **
+Model V2 
 model = models.resnet18(pretrained=True)
 model.fc = nn.Linear(model.fc.in_features, num_classes=2)
 
