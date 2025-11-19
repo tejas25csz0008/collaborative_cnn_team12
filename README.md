@@ -63,19 +63,19 @@ Fine-tuning strategy varies
 4.1 Self-Evaluation Metrics
 Model V1 on dataset_1
 Metric	    Score
-Accuracy	  0.9777
-Precision	  0.9780
-Recall	    0.9777
-F1-Score	  0.9777
+Accuracy	 = 0.9777
+Precision	=  0.9780
+Recall	  =  0.9777
+F1-Score	 = 0.9777
 
 
 4.2 Cross-Testing Results
 Model V2 tested  dataset_2
 Metric	    Score
-Accuracy	  0.9810
-Precision  	0.9813
-Recall	    0.9810
-F1-Score	  0.9810
+Accuracy	=  0.9810
+Precision = 	0.9813
+Recall	  =  0.9810
+F1-Score	 = 0.9810
 
 → Performs better than Model-1 on dataset 1
 → Indicates improved generalization stability
