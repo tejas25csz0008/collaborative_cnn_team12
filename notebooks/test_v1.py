@@ -10,30 +10,20 @@ import json
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 DATA_DIR = "data"
 
-# ----------------------------
-# TRANSFORMS (same as training)
-# ----------------------------
+
 transform = transforms.Compose([
     transforms.Resize((224,224)),
     transforms.ToTensor(),
 ])
 
-# ----------------------------
-# LOAD TEST DATA
-# ----------------------------
 test_ds = datasets.ImageFolder(os.path.join(DATA_DIR, "test"), transform=transform)
 test_loader = DataLoader(test_ds, batch_size=16, shuffle=False)
 
-# ----------------------------
-# LOAD TRAINED MODEL
-# ----------------------------
+
 model = ModelV1(num_classes=2).to(DEVICE)
 model.load_state_dict(torch.load("models/model_v1.pth", map_location=DEVICE))
 model.eval()
 
-# ----------------------------
-# EVALUATE MODEL
-# ----------------------------
 all_preds = []
 all_labels = []
 
@@ -46,9 +36,6 @@ with torch.no_grad():
         all_preds.extend(preds.cpu().numpy())
         all_labels.extend(labels.cpu().numpy())
 
-# ----------------------------
-# CALCULATE METRICS
-# ----------------------------
 accuracy = accuracy_score(all_labels, all_preds)
 f1 = f1_score(all_labels, all_preds, average="macro")
 precision = precision_score(all_labels, all_preds, average="macro")
@@ -61,7 +48,6 @@ results = {
     "recall": recall
 }
 
-# Save results
 os.makedirs("results", exist_ok=True)
 with open("results/test_v1_metrics.json", "w") as f:
     json.dump(results, f, indent=4)
